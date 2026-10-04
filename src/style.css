@@ -1,15 +1,119 @@
-.grid{
-  width: 606px;
-  height: 606px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #f8fafc;
+  background-color: #0f172a;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.35), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(236, 72, 153, 0.3), transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: auto, auto, 24px 24px;
+  background-attachment: fixed;
 }
-.square{
-  height: 200px;
-  width: 200px;
-  border: solid black 1px;
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
 }
-.mole{
+
+.title {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #818cf8, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stat {
+  min-width: 160px;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.stat h2 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.stat h2:last-child {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 1;
+  color: #fbbf24;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: min(90vw, 500px);
+  aspect-ratio: 1 / 1;
+}
+
+.square {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 4px 12px rgba(0, 0, 0, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform 0.1s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.square:hover {
+  border-color: rgba(129, 140, 248, 0.7);
+  box-shadow:
+    inset 0 4px 12px rgba(0, 0, 0, 0.5),
+    0 0 18px rgba(129, 140, 248, 0.45);
+}
+
+.square:active {
+  transform: scale(0.95);
+}
+
+.mole {
   background-image: url("./assets/mole.jpg");
   background-size: cover;
+  background-position: center;
+  border-color: #fbbf24;
+  animation: pop 0.2s ease-out;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
 }

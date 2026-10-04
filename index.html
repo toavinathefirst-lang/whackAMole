@@ -1,21 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>whackamole</title>
+    <title>Whack-a-Mole</title>
   </head>
   <body>
     <div id="app">
-      <h2>Your Score:</h2>
-      <h2 id="score">0</h2>
+      <h1 class="title">Whack-a-Mole</h1>
 
-      <h2>Time left:</h2>
-      <h2 id="time-left">60</h2>
+      <div class="scoreboard">
+        <div class="stat">
+          <h2>Score</h2>
+          <h2 id="score">0</h2>
+        </div>
+        <div class="stat">
+          <h2>Temps restant</h2>
+          <h2 id="time-left">60</h2>
+        </div>
+      </div>
 
       <div class="grid">
-        
         <div id="1" class="square"></div>
         <div id="2" class="square"></div>
         <div id="3" class="square"></div>
