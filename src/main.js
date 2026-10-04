@@ -19,4 +19,8 @@ function randomSquare(){
     hitPosition = randomSquare.id
 }
 
-randomSquare()
+function moveHole(){
+    let timerId = null
+    timerId=setInterval(randomSquare,700)
+}
+moveHole()
